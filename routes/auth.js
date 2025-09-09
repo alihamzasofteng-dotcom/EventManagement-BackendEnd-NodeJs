@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 
-//registering a user
+//login  a user
 router.post('/', async (req, res) => {
     const { error } = validateUSer(req.body); 
     if (error) return res.status(400).send(error.details[0].message);
@@ -20,7 +20,8 @@ router.post('/', async (req, res) => {
    if(!validPassword) return res.status(400).send('Invalid user or password');
 
    const token =user.generateToken();
-    res.send(token);
+    //res.send(token);
+    res.send({ token, name: user.name });
 });
 
 function validateUSer(req) {

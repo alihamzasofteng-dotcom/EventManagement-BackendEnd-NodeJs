@@ -12,7 +12,15 @@ const router = express.Router();
 router.post('/', async (req, res) => {
     //jo request main data aya ha wo scehma ky mutabiq ha ya nai 
     const { error } = validate(req.body); 
-    if (error) return res.status(400).send(error.details[0].message);
+  //  if (error) return res.status(400).send(error.details[0].message);
+  //proper message send krny ka treeka 
+  if (error) {
+    const errors = error.details.reduce((acc, cur) => {
+      acc[cur.context.key] = cur.message;
+      return acc;
+    }, {});
+    return res.status(400).send(errors);
+  }
   
     // user already register ha ya nai 
     //kisi aik property sy usy dhondhna ha to id nai use kry gy findbyone use krty han 
