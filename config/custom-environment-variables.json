@@ -1,3 +1,6 @@
 {
-    "jwtPrivateKey" :"vidly_jwtPrivateKey"
+    "jwtPrivateKey" :"vidly_jwtPrivateKey",
+    "openaiApiKey": "OPENAI_API_KEY",
+    "openaiModel": "OPENAI_MODEL",
+    "openaiEmbeddingsModel": "OPENAI_EMBEDDINGS_MODEL"
 }

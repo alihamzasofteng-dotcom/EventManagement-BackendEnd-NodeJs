@@ -1,4 +1,4 @@
 {
-    "jwtPrivateKey" :"",
-    "db" : "mongodb://127.0.0.1:27017/vidly"
+    "jwtPrivateKey" :"dev-key",
+    "db" : "mongodb://127.0.0.1:27017/eventManagementProject"
 }
